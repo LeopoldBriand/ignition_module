@@ -1,24 +1,21 @@
 {
   "name": "Ignition Module Development",
-  "image": "mcr.microsoft.com/devcontainers/java:11",
+  "image": "mcr.microsoft.com/devcontainers/java:17",  // Use JDK 17
   "features": {
-    "gradle": "latest"
+    "gradle": "latest"  // Install the latest Gradle version
   },
-  "postCreateCommand": "./gradlew build",
+  "postCreateCommand": "./gradlew build",  // Automatically build the project after creating the Codespace
   "customizations": {
     "vscode": {
       "extensions": [
-        "vscjava.vscode-java-pack",
-        "vscjava.vscode-gradle",
-        "redhat.java",
-        "adashen.vscode-tomcat"
+        "vscjava.vscode-java-pack"  // Microsoft Java Extension Pack (includes all necessary Java tools)
       ]
     }
   },
   "mounts": [
-    "source=/workspaces/ignition-sdk,target=/workspace/ignition-sdk,type=bind"
+    "source=/workspaces/ignition-sdk,target=/workspace/ignition-sdk,type=bind"  // Mount Ignition SDK folder
   ],
   "remoteEnv": {
-    "JAVA_HOME": "/usr/local/openjdk-11"
+    "JAVA_HOME": "/usr/local/openjdk-17"  // Ensure JAVA_HOME is set to JDK 17
   }
 }
