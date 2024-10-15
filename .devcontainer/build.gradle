@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://nexus.inductiveautomation.com/repository/public/'
+    }
+}
+
+dependencies {
+    compileOnly 'com.inductiveautomation.ignitionsdk:ignition-common:8.1.0'
+    compileOnly 'com.inductiveautomation.ignitionsdk:ignition-gateway:8.1.0'
+    compileOnly 'com.inductiveautomation.ignitionsdk:ignition-designer:8.1.0'
+}
