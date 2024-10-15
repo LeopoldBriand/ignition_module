@@ -1,0 +1,24 @@
+{
+  "name": "Ignition Module Development",
+  "image": "mcr.microsoft.com/devcontainers/java:11",
+  "features": {
+    "gradle": "latest"
+  },
+  "postCreateCommand": "./gradlew build",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-gradle",
+        "redhat.java",
+        "adashen.vscode-tomcat"
+      ]
+    }
+  },
+  "mounts": [
+    "source=/workspaces/ignition-sdk,target=/workspace/ignition-sdk,type=bind"
+  ],
+  "remoteEnv": {
+    "JAVA_HOME": "/usr/local/openjdk-11"
+  }
+}
